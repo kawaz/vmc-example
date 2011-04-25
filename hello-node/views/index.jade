@@ -1,0 +1,11 @@
+h1= title
+p 現在の接続人数は
+  span#count 0
+  人です。
+  span#status [connecting...]
+form#form
+  input#name(type='text', placeholder='Twitter ID', pattern='^[a-zA-Z0-9_]+$', required)
+  input#text(type='text', placeholder='Message', maxlength='140', autocomplete='off', required)
+  input(type='submit', value='送信')
+#chat
+  div

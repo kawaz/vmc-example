@@ -1,0 +1,25 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#chat {
+  width: 100%;
+  height: 80%;
+}
+#chat img {
+  vertical-align: middle;
+}
+#chat .name {
+}
+#chat .text:before {
+  content: "> "
+}
+#chat .ts {
+  color: #aaa;
+  margin-left: 0.5em;
+}
