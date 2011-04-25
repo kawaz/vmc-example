@@ -1,1 +1,4 @@
 vmc push する前に npm bundle を実行すること。
+
+デプロイ済みURL
+http://kawaz-hello-node.cloudfoundry.com/
