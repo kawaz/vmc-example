@@ -1,7 +1,16 @@
-//var WEB_SOCKET_SWF_LOCATION = "http://cdn.socket.io/stable/WebSocketMain.swf";
-var WEB_SOCKET_SWF_LOCATION = "/WebSocketMain.swf";
+var WEB_SOCKET_SWF_LOCATION = "http://cdn.socket.io/stable/WebSocketMain.swf";
 $(function(){
-  var socket = new io.Socket(null, {rememberTransport:false}); 
+  var socket = new io.Socket(null, {
+    rememberTransport: false,
+    transports: [
+      'websocket',
+      'flashsocket',
+      //'htmlfile', //IE9 Error
+      //'xhr-multipart', //FF4 Error
+      'xhr-polling',
+      'jsonp-polling'
+    ]
+  }); 
   var lastTs = 0;
   var actions = {
     count: function(m) {
