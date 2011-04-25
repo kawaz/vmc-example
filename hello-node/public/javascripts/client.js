@@ -61,7 +61,7 @@ $(function(){
     $("#status").text("[connected]");
   });
   socket.on('disconnect', function(){
-    $("#status").text("[disconnected?]");
+    $("#status").text("[disconnected]");
   });
   socket.on('message', function(m){
     m && actions[m.act] && actions[m.act](m);
