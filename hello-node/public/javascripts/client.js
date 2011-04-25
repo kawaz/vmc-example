@@ -57,12 +57,14 @@ $(function(){
   $("#socialbuttons .mixi_like").socialbutton('mixi_like', {key:'49a87265704bd6d4f5d798d55dd09a8fd6d27365', show_faces:false});
 
   socket.connect();
-  socket.on('connect', function(){
-    $("#status").text("[connected]");
-  });
-  socket.on('disconnect', function(){
-    $("#status").text("[disconnected]");
-  });
+  socket.on('connect', function(){ $("#status").text("[connect]"); });
+  socket.on('connecting', function(){ $("#status").text("[connecting]"); });
+  socket.on('connect_failed', function(){ $("#status").text("[connect_failed]"); });
+  socket.on('close', function(){ $("#status").text("[close]"); });
+  socket.on('disconnect', function(){ $("#status").text("[disconnect]"); });
+  socket.on('reconnect', function(){ $("#status").text("[reconnect]"); });
+  socket.on('reconnecting', function(){ $("#status").text("[reconnecting]"); });
+  socket.on('reconnect_failed', function(){ $("#status").text("[reconnect_failed]"); });
   socket.on('message', function(m){
     m && actions[m.act] && actions[m.act](m);
   });
