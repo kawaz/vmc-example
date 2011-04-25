@@ -1,5 +1,6 @@
 body {
-  padding: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -22,4 +23,18 @@ a {
 #chat .ts {
   color: #aaa;
   margin-left: 0.5em;
+}
+
+#socialbuttons {
+  width: 100%;
+}
+#socialbuttons > div {
+  float: left;
+  margin-right: 5px;
+}
+
+.clearfix:after {
+    content: ""; 
+    display: block; 
+    clear: both;
 }

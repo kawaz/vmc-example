@@ -50,13 +50,18 @@ $(function(){
     $("#name").val(localStorage.name);
     $("#text").focus();
   }
+  $("#socialbuttons .hatena").socialbutton('hatena');
+  $("#socialbuttons .twitter").socialbutton('twitter', {button:'horizontal', via:'kawaz'});
+  $("#socialbuttons .facebook_share").socialbutton('facebook_share', {button:"button_count"});
+  $("#socialbuttons .facebook_like").socialbutton('facebook_like', {button:"button_count", show_faces:false});
+  $("#socialbuttons .mixi_like").socialbutton('mixi_like', {key:'49a87265704bd6d4f5d798d55dd09a8fd6d27365', show_faces:false});
 
   socket.connect();
   socket.on('connect', function(){
     $("#status").text("[connected]");
   });
   socket.on('disconnect', function(){
-    $("#status").text("[disconnected]");
+    $("#status").text("[disconnected?]");
   });
   socket.on('message', function(m){
     m && actions[m.act] && actions[m.act](m);

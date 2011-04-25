@@ -1,8 +1,12 @@
+div!= partial("adsense.ejs")
+div!= partial("socialbuttons")
 h1= title
 p 現在の接続人数は
   span#count 0
   人です。
   span#status [connecting...]
+p ブログ記事は
+  a(href="http://d.hatena.ne.jp/y-kawaz/20110425/1303708958") こちら
 form#form
   input#name(type='text', placeholder='Twitter ID', pattern='^[a-zA-Z0-9_]+$', required)
   input#text(type='text', placeholder='Message', maxlength='140', autocomplete='off', required)
