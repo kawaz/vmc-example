@@ -27,7 +27,7 @@ app.configure('production', function(){
 // Routes
 
 app.get('/', function(req, res){
-  res.writeHead(200, {'Content-Type': 'text/html; charset=UTF-8'});
+  res.setHeader('Content-Type',  'text/html; charset=UTF-8');
   res.render('index', {
     title: '初めての Node on Cloud Foundry'
   });
